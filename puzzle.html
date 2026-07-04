@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Pocket Edu Web - Puzzle</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+body{
+
+background:#070b17;
+
+padding-bottom:90px;
+
+}
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+}
+
+.stats{
+
+display:flex;
+
+gap:10px;
+
+}
+
+.stat{
+
+padding:10px 15px;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+font-size:14px;
+
+}
+
+#quizCard{
+
+width:92%;
+
+margin:auto;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+padding:20px;
+
+}
+
+#question{
+
+font-size:21px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+line-height:1.6;
+
+}
+
+.option{
+
+width:100%;
+
+margin-bottom:15px;
+
+padding:15px;
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:15px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.2s;
+
+text-align:left;
+
+}
+
+.option:hover{
+
+border-color:#4f8cff;
+
+}
+
+.correct{
+
+background:#16a34a !important;
+
+}
+
+.wrong{
+
+background:#dc2626 !important;
+
+}
+
+#nextBtn{
+
+margin-top:20px;
+
+width:100%;
+
+height:55px;
+
+border:none;
+
+border-radius:15px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+display:none;
+
+}
+
+.result{
+
+text-align:center;
+
+padding:40px 20px;
+
+}
+
+.result h2{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loader">
+
+<div class="loaderCircle"></div>
+
+<h2>Pocket Edu Web</h2>
+
+</div>
+
+<div class="header">
+
+<h2>Puzzle</h2>
+
+<div class="stats">
+
+<div class="stat">
+
+⏱️ <span id="timer">30</span>
+
+</div>
+
+<div class="stat">
+
+⭐ <span id="score">0</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="quizCard">
+
+<div id="question">
+
+লোড হচ্ছে...
+
+</div>
+
+<div id="options"></div>
+
+<button id="nextBtn">
+
+পরবর্তী প্রশ্ন
+
+</button>
+
+</div>
+
+<nav class="bottomNav">
+
+<button class="navItem"
+onclick="location.href='home.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</button>
+
+<button class="navItem active">
+
+<i class="fa-solid fa-puzzle-piece"></i>
+
+<span>Puzzle</span>
+
+</button>
+
+<button class="navItem"
+onclick="location.href='notification.html'">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Notification</span>
+
+</button>
+
+<button class="navItem"
+onclick="location.href='profile.html'">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</button>
+
+</nav>
+
+<div id="toast"></div>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/puzzle.js"></script>
+
+</body>
+
+</html>
