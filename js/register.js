@@ -53,7 +53,8 @@ return `${day}/${month}/${year}`;
 const form = document.getElementById("registerForm");
 
 form?.addEventListener("submit", async(e)=>{
-
+alert(error.code)
+  alert(error.massage)
 e.preventDefault();
 
 // ==========================================
