@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Pocket Edu Web - Notifications</title>
+
+
+    <link rel="stylesheet" href="css/home.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        body {
+            background: #070b17;
+            color: #fff;
+        }
+
+        .pageHeader {
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+
+        }
+
+        .backBtn {
+
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .08);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+
+        }
+
+        .sectionTitle {
+
+            padding: 0 18px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: 600;
+
+        }
+
+        #friendRequestList {
+
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+        }
+
+        .requestCard {
+
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 18px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+
+        }
+
+        .requestLeft {
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+        }
+
+        .requestEmoji {
+
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #1f2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+
+        }
+
+        .requestInfo {
+
+            flex: 1;
+
+        }
+
+        .requestName {
+
+            font-size: 18px;
+            font-weight: 600;
+
+        }
+
+        .requestUsername {
+
+            font-size: 13px;
+            color: #9aa7bd;
+            margin-top: 2px;
+
+        }
+
+        .requestButtons {
+
+            display: flex;
+            gap: 8px;
+
+        }
+
+        .acceptBtn {
+
+            border: none;
+            background: #16a34a;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+
+        }
+
+        .rejectBtn {
+
+            border: none;
+            background: #dc2626;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+
+        }
+
+        #notificationList {
+
+            padding: 18px;
+            padding-bottom: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+        }
+
+        .noticeCard {
+
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 18px;
+            padding: 18px;
+
+        }
+
+        .noticeTitle {
+
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 10px;
+
+        }
+
+        .noticeMessage {
+
+            color: #d5dceb;
+            line-height: 1.7;
+            margin-bottom: 15px;
+
+        }
+
+        .noticeDate {
+
+            font-size: 13px;
+            color: #9aa7bd;
+
+        }
+
+        .empty {
+
+            padding: 40px;
+            text-align: center;
+            color: #9aa7bd;
+
+        }
+
+        .navIndicator {
+            transform: translateX(390%);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="loader">
+
+        <div class="loaderCircle"></div>
+
+        <h2>Pocket Edu Web</h2>
+
+    </div>
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="history.back()">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+        </button>
+
+        <h2>Notifications</h2>
+
+    </div>
+
+    <h3 class="sectionTitle">
+
+        Friend Requests
+
+    </h3>
+
+    <div id="friendRequestList">
+
+        <div class="empty">
+
+            কোন Friend Request নেই
+
+        </div>
+
+    </div>
+
+    <h3 class="sectionTitle">
+
+        Notifications
+
+    </h3>
+
+    <div id="notificationList">
+
+        <div class="empty">
+
+            লোড হচ্ছে...
+
+        </div>
+
+    </div>
+    <nav class="bottomNav">
+
+        <button class="navItem" onclick="location.href='home.html'">
+
+            <i class="fa-solid fa-house"></i>
+
+            <span>Home</span>
+
+        </button>
+
+        <button class="navItem" onclick="location.href='puzzle.html'">
+
+            <i class="fa-solid fa-puzzle-piece"></i>
+
+            <span>Puzzle</span>
+
+        </button>
+        <button class="navItem" onclick="location.href='chats.html'">
+
+            <i class="fa-solid fa-comments"></i>
+
+            <span>Chats</span>
+
+        </button>
+
+        <button class="navItem active">
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span>Notification</span>
+
+        </button>
+
+        <button class="navItem" onclick="location.href='profile.html'">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>Profile</span>
+
+        </button>
+
+        <div class="navIndicator"></div>
+
+    </nav>
+
+    <div id="toast"></div>
+
+    <script type="module" src="js/firebase.js"></script>
+
+    <script type="module" src="js/notification.js"></script>
+
+</body>
+
+</html>

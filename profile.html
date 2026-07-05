@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Pocket Edu Web - Profile</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+body{
+
+background:#070b17;
+
+padding-bottom:90px;
+
+}
+
+.profileBox{
+
+width:92%;
+
+max-width:500px;
+
+margin:20px auto;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:25px;
+
+text-align:center;
+
+}
+.profileImage{
+width:100px;
+height:100px;
+border-radius:50%;
+background:#1f2937;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+border:3px solid #3b82f6;
+user-select:none;
+}
+.profileName{
+
+font-size:26px;
+
+font-weight:700;
+
+margin-top:15px;
+
+}
+
+.profilePhone{
+
+margin-top:8px;
+
+color:#b8c3d8;
+
+}
+
+.infoBox{
+
+margin-top:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.infoItem{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px;
+
+background:rgba(255,255,255,.04);
+
+border-radius:15px;
+
+}
+
+.infoTitle{
+
+color:#b8c3d8;
+
+}
+
+.actionBtn{
+
+width:100%;
+
+height:55px;
+
+margin-top:15px;
+
+border:none;
+
+border-radius:15px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+.editBtn{
+
+background:#2563eb;
+
+color:#fff;
+
+}
+
+.logoutBtn{
+
+background:#dc2626;
+
+color:#fff;
+
+}
+.navIndicator{
+
+position:absolute;
+
+
+left:4%;
+
+width:15%;
+
+height:62px;
+
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+border-radius:18px;
+
+opacity:.18;
+
+transition:.3s;
+
+z-index:1;
+transform: translateX(525%);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loader">
+
+<div class="loaderCircle"></div>
+
+<h2>Pocket Edu Web</h2>
+
+</div>
+
+<div class="profileBox">
+
+<div
+id="profilePhoto"
+class="profileImage">
+😀
+</div>
+<h2 id="a"></h2>
+<div
+id="profileName"
+class="profileName">
+
+Loading...
+
+</div>
+
+<div
+id="profilePhone"
+class="profilePhone">
+
+Loading...
+
+</div>
+<div class="infoBox">
+
+<div class="infoItem">
+
+<span class="infoTitle">
+
+Join Date
+
+</span>
+
+<span id="joinDate">
+
+--
+
+</span>
+
+</div>
+
+<div class="infoItem">
+
+<span class="infoTitle">
+
+Coins
+
+</span>
+
+<span id="coins">
+
+0
+
+</span>
+
+</div>
+
+<div class="infoItem">
+
+<span class="infoTitle">
+
+Level
+
+</span>
+
+<span id="level">
+
+1
+
+</span>
+
+</div>
+
+<div class="infoItem">
+
+<span class="infoTitle">
+
+Role
+
+</span>
+
+<span id="role">
+
+User
+
+</span>
+
+</div>
+
+</div>
+
+<button
+class="actionBtn editBtn"
+id="editProfileBtn">
+
+<i class="fa-solid fa-pen"></i>
+
+Edit Profile
+
+</button>
+
+<button
+class="actionBtn logoutBtn"
+id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</div>
+
+<nav class="bottomNav">
+
+<button class="navItem"
+onclick="location.href='home.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</button>
+
+<button class="navItem"
+onclick="location.href='puzzle.html'">
+
+<i class="fa-solid fa-puzzle-piece"></i>
+
+<span>Puzzle</span>
+
+</button>
+<button
+class="navItem"
+onclick="location.href='chats.html'">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Chats</span>
+
+</button>
+
+<button class="navItem"
+onclick="location.href='notification.html'">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Notification</span>
+
+</button>
+
+<button class="navItem active">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</button>
+
+<div class="navIndicator"></div>
+
+</nav>
+
+<div id="toast"></div>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/profile.js"></script>
+
+</body>
+
+</html>
