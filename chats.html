@@ -1,0 +1,220 @@
+<!-- ==========================================
+Pocket Edu Web
+chats.html
+========================================== -->
+
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0">
+
+<title>Chats - Pocket Edu</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="css/chats.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="chatHeader">
+
+<h2>
+
+<i class="fa-solid fa-comments"></i>
+
+Chats
+
+</h2>
+
+<button id="addFriendBtn">
+
+<i class="fa-solid fa-user-plus"></i>
+
+<span>Add Friend</span>
+
+</button>
+
+</header>
+
+<div class="searchBox">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchFriend"
+placeholder="বন্ধু খুঁজুন">
+
+</div>
+
+<!-- Friend List -->
+
+<div
+id="friendList"
+class="friendList">
+
+<div class="emptyFriends">
+
+<div class="emptyIcon">
+
+👥
+
+</div>
+
+<h2>
+
+কোন বন্ধু নেই
+
+</h2>
+
+<p>
+
+নতুন বন্ধু যোগ করতে
+উপরের <b>Add Friend</b>
+বাটনে চাপুন।
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Floating Add Friend -->
+
+<div
+id="addFriendModal"
+class="modal">
+
+<div class="modalContent">
+
+<div class="modalHeader">
+
+<h2>
+
+Add Friend
+
+</h2>
+
+<button id="closeModal">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div class="modalSearch">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+
+type="text"
+
+id="searchUsername"
+
+placeholder="Username লিখুন">
+
+</div>
+
+<div
+id="searchResult"
+class="userList">
+
+<!-- All Users -->
+
+</div>
+
+</div>
+
+</div>
+
+<nav class="bottomNav">
+
+<button
+class="navItem"
+onclick="location.href='home.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</button>
+<button
+class="navItem"
+onclick="location.href='puzzle.html'">
+
+<i class="fa-solid fa-puzzle-piece"></i>
+
+<span>Puzzle</span>
+
+</button>
+<button
+class="navItem active">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Chats</span>
+
+</button>
+
+<button
+class="navItem"
+onclick="location.href='notification.html'">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>Notification</span>
+
+</button>
+
+<button
+class="navItem"
+onclick="location.href='profile.html'">
+
+<i class="fa-solid fa-user"></i>
+
+<span>Profile</span>
+
+</button>
+
+<div class="navIndicator"></div>
+
+</nav>
+
+<div id="toast"></div>
+
+<script
+type="module"
+src="js/firebase.js"></script>
+
+<script
+type="module"
+src="js/chats.js"></script>
+
+</body>
+
+</html>
