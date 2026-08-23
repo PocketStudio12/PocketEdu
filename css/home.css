@@ -1,0 +1,1658 @@
+/* =====================================================
+   POCKET EDU
+   home.css
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --bg: #0b1020;
+    --card: #141b2d;
+    --card2: #192238;
+
+    --text: #f5f7ff;
+    --muted: #9da7bd;
+
+    --primary: #6c63ff;
+    --primary-dark: #554ce6;
+
+    --border: rgba(255,255,255,0.08);
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--bg);
+
+    color:
+        var(--text);
+
+    min-height:
+        100vh;
+
+}
+
+
+button {
+
+    font-family:
+        inherit;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-screen {
+
+    min-height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+.loading-screen h2 {
+    font-size: 24px;
+}
+
+
+.loading-screen p {
+    color:
+        var(--muted);
+}
+
+
+.loader {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border:
+        4px solid
+        rgba(255,255,255,0.1);
+
+    border-top-color:
+        var(--primary);
+
+    border-radius:
+        50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+
+    max-width:
+        700px;
+
+    margin:
+        auto;
+
+    min-height:
+        100vh;
+
+    padding-bottom:
+        85px;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top-header {
+
+    height:
+        72px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        12px 18px;
+
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        20;
+
+    background:
+        rgba(11,16,32,0.92);
+
+    backdrop-filter:
+        blur(12px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.brand-icon {
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--primary);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        22px;
+
+}
+
+
+.brand h1 {
+
+    font-size:
+        18px;
+
+}
+
+
+.brand span {
+
+    font-size:
+        11px;
+
+    color:
+        var(--muted);
+
+}
+
+
+.profile-button {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--card2);
+
+    color:
+        white;
+
+    font-size:
+        19px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+
+    padding:
+        18px;
+
+}
+
+
+.screen {
+    display: none;
+}
+
+
+.screen.active {
+    display: block;
+
+    animation:
+        screenIn 0.25s ease;
+}
+
+
+@keyframes screenIn {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #24205c,
+            #151b38
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    padding:
+        22px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+}
+
+
+.small-text {
+
+    color:
+        #b8b5ff;
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.welcome-card h2 {
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        6px;
+
+}
+
+
+.welcome-card p:last-child {
+
+    color:
+        var(--muted);
+
+}
+
+
+.welcome-emoji {
+
+    font-size:
+        55px;
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+    margin-top:
+        14px;
+
+}
+
+
+.stat-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    padding:
+        15px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+.stat-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        13px;
+
+    background:
+        var(--card2);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        20px;
+
+}
+
+
+.stat-card strong {
+
+    display:
+        block;
+
+    font-size:
+        20px;
+
+}
+
+
+.stat-card small {
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin:
+        25px 2px 12px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        19px;
+
+}
+
+
+.text-button {
+
+    background:
+        transparent;
+
+    color:
+        #9c96ff;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =====================================================
+   QUICK GRID
+===================================================== */
+
+.quick-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+}
+
+
+.quick-card {
+
+    text-align:
+        left;
+
+    background:
+        var(--card);
+
+    color:
+        var(--text);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        20px;
+
+    padding:
+        18px;
+
+    transition:
+        transform .15s,
+        background .15s;
+
+}
+
+
+.quick-card:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+.quick-card > span {
+
+    display:
+        block;
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.quick-card strong {
+
+    display:
+        block;
+
+    font-size:
+        16px;
+
+}
+
+
+.quick-card small {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    margin-top:
+        5px;
+
+}
+
+
+.puzzle-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #29234f,
+            #151b2d
+        );
+
+}
+
+
+/* =====================================================
+   SUBJECT GRID
+===================================================== */
+
+.subject-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+}
+
+
+.subject-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    padding:
+        17px;
+
+    color:
+        var(--text);
+
+    text-align:
+        left;
+
+    transition:
+        transform .15s;
+
+}
+
+
+.subject-card:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+.subject-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border-radius:
+        15px;
+
+    background:
+        var(--card2);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.subject-card strong {
+
+    display:
+        block;
+
+    font-size:
+        15px;
+
+}
+
+
+.subject-card small {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    margin-top:
+        5px;
+
+}
+
+
+.subject-grid.large {
+
+    margin-top:
+        20px;
+
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.page-header h2 {
+
+    font-size:
+        21px;
+
+}
+
+
+.page-header p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    margin-top:
+        4px;
+
+}
+
+
+.back-button {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        13px;
+
+    background:
+        var(--card);
+
+    color:
+        white;
+
+    font-size:
+        22px;
+
+}
+
+
+/* =====================================================
+   CHAPTERS
+===================================================== */
+
+.chapter-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.chapter-card {
+
+    width:
+        100%;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        17px;
+
+    padding:
+        16px;
+
+    color:
+        white;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    text-align:
+        left;
+
+}
+
+
+.chapter-icon {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border-radius:
+        13px;
+
+    background:
+        var(--card2);
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    font-size:
+        21px;
+
+}
+
+
+.chapter-card strong {
+
+    display:
+        block;
+
+}
+
+
+.chapter-card small {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    margin-top:
+        4px;
+
+}
+
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+.questions-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        15px;
+
+}
+
+
+.question-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    padding:
+        18px;
+
+}
+
+
+.question-type {
+
+    display:
+        inline-block;
+
+    background:
+        rgba(108,99,255,.15);
+
+    color:
+        #aaa5ff;
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        8px;
+
+    font-size:
+        11px;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.question-text {
+
+    font-size:
+        16px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.answer-box {
+
+    margin-top:
+        13px;
+
+    padding:
+        13px;
+
+    background:
+        var(--card2);
+
+    border-radius:
+        12px;
+
+}
+
+
+.answer-label {
+
+    color:
+        #9d97ff;
+
+    font-size:
+        11px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.answer-text {
+
+    color:
+        #dce1ef;
+
+    line-height:
+        1.6;
+
+}
+
+
+.marks {
+
+    margin-top:
+        10px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   PUZZLES
+===================================================== */
+
+.puzzles-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        15px;
+
+}
+
+
+.puzzle-card-full {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        20px;
+
+    padding:
+        18px;
+
+}
+
+
+.puzzle-top {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.puzzle-label {
+
+    color:
+        #aaa5ff;
+
+    font-size:
+        12px;
+
+}
+
+
+.puzzle-reward {
+
+    background:
+        rgba(255,193,7,.12);
+
+    color:
+        #ffd45a;
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        12px;
+
+}
+
+
+.puzzle-question {
+
+    font-size:
+        17px;
+
+    line-height:
+        1.55;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.puzzle-options {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        9px;
+
+}
+
+
+.puzzle-option {
+
+    background:
+        var(--card2);
+
+    border:
+        1px solid var(--border);
+
+    color:
+        var(--text);
+
+    border-radius:
+        12px;
+
+    padding:
+        13px;
+
+    text-align:
+        left;
+
+}
+
+
+.puzzle-option.selected {
+
+    border-color:
+        var(--primary);
+
+    background:
+        rgba(108,99,255,.18);
+
+}
+
+
+.puzzle-submit {
+
+    width:
+        100%;
+
+    margin-top:
+        14px;
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+    padding:
+        13px;
+
+    border-radius:
+        12px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.puzzle-submit:active {
+
+    background:
+        var(--primary-dark);
+
+}
+
+
+.puzzle-result {
+
+    margin-top:
+        12px;
+
+    padding:
+        11px;
+
+    border-radius:
+        10px;
+
+    font-size:
+        13px;
+
+}
+
+
+.puzzle-result.correct {
+
+    background:
+        rgba(46,204,113,.12);
+
+    color:
+        #69e69a;
+
+}
+
+
+.puzzle-result.wrong {
+
+    background:
+        rgba(255,80,80,.12);
+
+    color:
+        #ff8f8f;
+
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    padding:
+        25px;
+
+    text-align:
+        center;
+
+}
+
+
+.profile-big-avatar {
+
+    width:
+        80px;
+
+    height:
+        80px;
+
+    margin:
+        auto;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--card2);
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    font-size:
+        40px;
+
+}
+
+
+.profile-card h2 {
+
+    margin-top:
+        14px;
+
+}
+
+
+.profile-card > p {
+
+    color:
+        var(--muted);
+
+    margin-top:
+        5px;
+
+}
+
+
+.profile-info {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+
+    margin:
+        20px 0;
+
+}
+
+
+.profile-info div {
+
+    background:
+        var(--card2);
+
+    border-radius:
+        13px;
+
+    padding:
+        13px;
+
+}
+
+
+.profile-info span {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+}
+
+
+.profile-info strong {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+}
+
+
+.logout-button {
+
+    width:
+        100%;
+
+    background:
+        #32202a;
+
+    color:
+        #ff9292;
+
+    padding:
+        13px;
+
+    border-radius:
+        12px;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px dashed var(--border);
+
+    border-radius:
+        17px;
+
+    padding:
+        25px;
+
+    text-align:
+        center;
+
+    color:
+        var(--muted);
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* =====================================================
+   BOTTOM NAV
+===================================================== */
+
+.bottom-nav {
+
+    position:
+        fixed;
+
+    bottom:
+        0;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(700px, 100%);
+
+    height:
+        70px;
+
+    background:
+        rgba(20,27,45,.96);
+
+    backdrop-filter:
+        blur(14px);
+
+    border-top:
+        1px solid var(--border);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    z-index:
+        30;
+
+}
+
+
+.nav-button {
+
+    background:
+        transparent;
+
+    color:
+        var(--muted);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+}
+
+
+.nav-button span {
+
+    font-size:
+        19px;
+
+}
+
+
+.nav-button small {
+
+    font-size:
+        10px;
+
+}
+
+
+.nav-button.active {
+
+    color:
+        #aaa5ff;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        85px;
+
+    transform:
+        translate(-50%, 20px);
+
+    background:
+        #222a3d;
+
+    color:
+        white;
+
+    padding:
+        11px 17px;
+
+    border-radius:
+        12px;
+
+    font-size:
+        13px;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        .25s;
+
+    z-index:
+        100;
+
+    max-width:
+        calc(100% - 30px);
+
+    text-align:
+        center;
+
+}
+
+
+.toast.show {
+
+    opacity:
+        1;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+    main {
+        padding: 14px;
+    }
+
+    .quick-grid {
+        gap: 9px;
+    }
+
+    .subject-grid {
+        gap: 9px;
+    }
+
+    .welcome-card {
+        padding: 18px;
+    }
+
+    .welcome-emoji {
+        font-size: 43px;
+    }
+
+}
