@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Pocket Edu - Forgot Password</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/auth.css">
+
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-card">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+            🔐
+        </div>
+
+        <h1>
+            Pocket Edu
+        </h1>
+
+        <p
+            class="subtitle"
+            id="forgotTitle">
+            পাসওয়ার্ড পরিবর্তন করুন
+        </p>
+
+        <p
+            class="description"
+            id="forgotSubtitle">
+            আপনার ফোন নম্বর দিয়ে শুরু করুন
+        </p>
+
+
+        <!-- LANGUAGE -->
+
+        <div class="language-switch">
+
+            <button
+                type="button"
+                id="bnButton">
+                বাংলা
+            </button>
+
+            <button
+                type="button"
+                id="enButton">
+                English
+            </button>
+
+        </div>
+
+
+        <!-- ================================================== -->
+        <!-- PHONE STEP -->
+        <!-- ================================================== -->
+
+        <div id="phoneStep">
+
+            <label for="phone">
+                📱 ফোন নম্বর
+            </label>
+
+            <div class="input-box">
+
+                <span>📱</span>
+
+                <input
+                    id="phone"
+                    type="tel"
+                    inputmode="numeric"
+                    placeholder="9876543210"
+                    autocomplete="tel">
+
+            </div>
+
+
+            <!-- RECAPTCHA -->
+
+            <div
+                id="recaptcha-container">
+            </div>
+
+
+            <button
+                id="sendOtpButton"
+                class="main-button"
+                type="button">
+
+                OTP পাঠান
+
+            </button>
+
+        </div>
+
+
+        <!-- ================================================== -->
+        <!-- OTP STEP -->
+        <!-- ================================================== -->
+
+        <div
+            id="otpStep"
+            style="display: none;">
+
+            <label for="otp">
+                🔢 OTP
+            </label>
+
+            <div class="input-box">
+
+                <span>🔢</span>
+
+                <input
+                    id="otp"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="6"
+                    placeholder="000000"
+                    autocomplete="one-time-code">
+
+            </div>
+
+
+            <button
+                id="verifyOtpButton"
+                class="main-button"
+                type="button">
+
+                OTP যাচাই করুন
+
+            </button>
+
+
+            <button
+                id="changePhoneButton"
+                class="secondary-button"
+                type="button">
+
+                ফোন নম্বর পরিবর্তন
+
+            </button>
+
+        </div>
+
+
+        <!-- ================================================== -->
+        <!-- PASSWORD STEP -->
+        <!-- ================================================== -->
+
+        <div
+            id="passwordStep"
+            style="display: none;">
+
+            <label for="newPassword">
+                🔑 নতুন পাসওয়ার্ড
+            </label>
+
+            <div class="input-box">
+
+                <span>🔑</span>
+
+                <input
+                    id="newPassword"
+                    type="password"
+                    autocomplete="new-password"
+                    placeholder="••••••••">
+
+            </div>
+
+
+            <label for="confirmNewPassword">
+                🔐 পাসওয়ার্ড নিশ্চিত করুন
+            </label>
+
+            <div class="input-box">
+
+                <span>🔐</span>
+
+                <input
+                    id="confirmNewPassword"
+                    type="password"
+                    autocomplete="new-password"
+                    placeholder="••••••••">
+
+            </div>
+
+
+            <button
+                id="resetPasswordButton"
+                class="main-button"
+                type="button">
+
+                পাসওয়ার্ড পরিবর্তন করুন
+
+            </button>
+
+        </div>
+
+
+        <!-- ================================================== -->
+        <!-- MESSAGE -->
+        <!-- ================================================== -->
+
+        <div
+            id="message"
+            class="message">
+        </div>
+
+
+        <!-- ================================================== -->
+        <!-- BACK LOGIN -->
+        <!-- ================================================== -->
+
+        <p class="bottom-text">
+
+            <a href="login.html">
+
+                লগইনে ফিরে যান
+
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ====================================================== -->
+<!-- FIREBASE + FORGOT JS -->
+<!-- ====================================================== -->
+
+<script
+    type="module"
+    src="js/forgot.js">
+</script>
+
+</body>
+
+</html>

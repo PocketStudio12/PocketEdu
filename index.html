@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Pocket Edu</title>
+
+    <link
+        rel="stylesheet"
+        href="css/home.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     LOADING
+================================================== -->
+
+<div id="loadingScreen" class="loading-screen">
+
+    <div class="loader"></div>
+
+    <h2>Pocket Edu</h2>
+
+    <p>লোড হচ্ছে...</p>
+
+</div>
+
+
+<!-- ==================================================
+     APP
+================================================== -->
+
+<div id="app" class="app hidden">
+
+
+    <!-- ==============================================
+         HEADER
+    =============================================== -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <img src="pocketedu.png" style="width: 50px;">
+            </div>
+
+            <div>
+
+                <h1>Pocket Edu</h1>
+
+                <span>
+                    Learning
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="profileButton"
+            class="profile-button"
+        >
+            👤
+        </button>
+
+    </header>
+
+
+
+    <!-- ==============================================
+         MAIN
+    =============================================== -->
+
+    <main id="mainContent">
+
+
+        <!-- ==========================================
+             HOME SCREEN
+        =========================================== -->
+
+        <section
+            id="homeScreen"
+            class="screen active"
+        >
+
+            <div class="welcome-card">
+
+                <div>
+
+                    <p class="small-text">
+                        স্বাগতম 👋
+                    </p>
+
+                    <h2 id="welcomeName">
+                        Student
+                    </h2>
+
+                    <p>
+                        how are you?
+                    </p>
+
+                </div>
+
+                <div class="welcome-emoji">
+                    🎓
+                </div>
+
+            </div>
+
+
+
+            <!-- USER STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        🪙
+                    </span>
+
+                    <div>
+
+                        <strong id="coinValue">
+                            0
+                        </strong>
+
+                        <small>
+                            Coins
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        ⭐
+                    </span>
+
+                    <div>
+
+                        <strong id="levelValue">
+                            1
+                        </strong>
+
+                        <small>
+                            Level
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="section-heading">
+
+                <h2>
+                    শুরু করি 🚀
+                </h2>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+
+                <button
+                    class="quick-card"
+                    data-open="subjects"
+                >
+
+                    <span>
+                        📚
+                    </span>
+
+                    <strong>
+                        Subjects
+                    </strong>
+
+                    <small>
+                        start learning
+                    </small>
+
+                </button>
+
+
+
+                <button
+                    class="quick-card puzzle-card"
+                    data-open="puzzles"
+                >
+
+                    <span>
+                        🧩
+                    </span>
+
+                    <strong>
+                        Puzzle
+                    </strong>
+
+                    <small>
+                       start pizzle
+                    </small>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- SUBJECT PREVIEW -->
+
+            <div class="section-heading">
+
+                <h2>
+                    Subjects
+                </h2>
+
+                <button
+                    class="text-button"
+                    data-open="subjects"
+                >
+                    সব দেখুন →
+                </button>
+
+            </div>
+
+
+            <div
+                id="homeSubjects"
+                class="subject-grid"
+            >
+
+                <div class="empty-card">
+                    Subjects লোড হচ্ছে...
+                </div>
+
+            </div>
+
+
+
+            <!-- PUZZLE PREVIEW -->
+
+            <div class="section-heading">
+
+                <h2>
+                    🧩 Puzzle
+                </h2>
+
+                <button
+                    class="text-button"
+                    data-open="puzzles"
+                >
+                    খেলুন →
+                </button>
+
+            </div>
+
+
+            <div
+                id="homePuzzlePreview"
+                class="puzzle-preview"
+            >
+
+                <div class="empty-card">
+                    Puzzle লোড হচ্ছে...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             SUBJECT SCREEN
+        =========================================== -->
+
+        <section
+            id="subjectsScreen"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <button
+                    class="back-button"
+                    data-back="home"
+                >
+                    ←
+                </button>
+
+                <div>
+
+                    <h2>
+                        📚 Subjects
+                    </h2>
+
+                    <p>
+                        একটি Subject নির্বাচন করুন
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="subjectsList"
+                class="subject-grid large"
+            >
+
+                <div class="empty-card">
+                    Subjects লোড হচ্ছে...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             CHAPTER SCREEN
+        =========================================== -->
+
+        <section
+            id="chaptersScreen"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <button
+                    class="back-button"
+                    data-back="subjects"
+                >
+                    ←
+                </button>
+
+                <div>
+
+                    <h2 id="chapterTitle">
+                        Chapters
+                    </h2>
+
+                    <p>
+                        একটি Chapter নির্বাচন করুন
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="chaptersList"
+                class="chapter-list"
+            >
+
+                <div class="empty-card">
+                    Chapters লোড হচ্ছে...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             QUESTIONS SCREEN
+        =========================================== -->
+
+        <section
+            id="questionsScreen"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <button
+                    class="back-button"
+                    data-back="chapters"
+                >
+                    ←
+                </button>
+
+                <div>
+
+                    <h2 id="questionsTitle">
+                        Questions
+                    </h2>
+
+                    <p>
+                        পড়ুন ও অনুশীলন করুন
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="questionsList"
+                class="questions-list"
+            >
+
+                <div class="empty-card">
+                    Questions লোড হচ্ছে...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             PUZZLE SCREEN
+        =========================================== -->
+
+        <section
+            id="puzzlesScreen"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <button
+                    class="back-button"
+                    data-back="home"
+                >
+                    ←
+                </button>
+
+                <div>
+
+                    <h2>
+                        🧩 Puzzle
+                    </h2>
+
+                    <p>
+                        সঠিক উত্তর দিয়ে Coins জিতুন
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="puzzlesList"
+                class="puzzles-list"
+            >
+
+                <div class="empty-card">
+                    Puzzle লোড হচ্ছে...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             PROFILE SCREEN
+        =========================================== -->
+
+        <section
+            id="profileScreen"
+            class="screen"
+        >
+
+            <div class="page-header">
+
+                <button
+                    class="back-button"
+                    data-back="home"
+                >
+                    ←
+                </button>
+
+                <div>
+
+                    <h2>
+                        👤 Profile
+                    </h2>
+
+                    <p>
+                        আপনার Account
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <div
+                    id="profileEmoji"
+                    class="profile-big-avatar"
+                >
+                    👤
+                </div>
+
+
+                <h2 id="profileName">
+                    Student
+                </h2>
+
+
+                <p id="profileUsername">
+                    @username
+                </p>
+
+
+                <div class="profile-info">
+
+                    <div>
+
+                        <span>
+                            🪙 Coins
+                        </span>
+
+                        <strong id="profileCoins">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            ⭐ Level
+                        </span>
+
+                        <strong id="profileLevel">
+                            1
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==============================================
+         BOTTOM NAVIGATION
+    =============================================== -->
+
+    <nav class="bottom-nav">
+
+
+        <button
+            class="nav-button active"
+            data-open="home"
+        >
+
+            <span>
+                🏠
+            </span>
+
+            <small>
+                Home
+            </small>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-open="subjects"
+        >
+
+            <span>
+                📚
+            </span>
+
+            <small>
+                Subjects
+            </small>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-open="puzzles"
+        >
+
+            <span>
+                🧩
+            </span>
+
+            <small>
+                Puzzle
+            </small>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-open="profile"
+        >
+
+            <span>
+                👤
+            </span>
+
+            <small>
+                Profile
+            </small>
+
+        </button>
+
+
+    </nav>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     TOAST
+================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+>
+</div>
+
+
+
+<script
+    type="module"
+    src="js/home.js"
+></script>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Pocket Edu - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-card">
+
+        <div class="logo">
+            📚
+        </div>
+
+        <h1>Pocket Edu</h1>
+
+        <p class="subtitle" data-lang="welcome">
+            আবার স্বাগতম!
+        </p>
+
+        <p
+            class="description"
+            data-lang="subtitle">
+            তোমার পড়াশোনার যাত্রা চালিয়ে যাও
+        </p>
+
+        <div class="language-switch">
+
+            <button
+                onclick="changeLanguage('bn')">
+                বাংলা
+            </button>
+
+            <button
+                onclick="changeLanguage('en')">
+                English
+            </button>
+
+        </div>
+
+        <form id="loginForm">
+
+            <label data-lang="phone">
+                ফোন নম্বর
+            </label>
+
+            <div class="input-box">
+
+                <span>📱</span>
+
+                <input
+                    id="phone"
+                    type="tel"
+                    placeholder="01XXXXXXXXX"
+                    required>
+
+            </div>
+
+            <label data-lang="password">
+                পাসওয়ার্ড
+            </label>
+
+            <div class="input-box">
+
+                <span>🔑</span>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="••••••••"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="main-button"
+                data-lang="login">
+                লগইন
+            </button>
+
+        </form>
+        <a
+            href="forgot.html"
+            class="forgot"
+            data-lang="forgot">
+            পাসওয়ার্ড ভুলে গেছো?
+        </a>
+
+        <div
+            id="message"
+            class="message">
+        </div>
+        <div class="divider">
+            <span>OR</span>
+        </div>
+        <p class="bottom-text">
+           <span data-lang="noAccount">
+                অ্যাকাউন্ট নেই?
+            </span>
+            <a
+                href="register.html"
+                data-lang="createAccount">
+                অ্যাকাউন্ট তৈরি করুন
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+<script type="module">
+
+import {
+    setLanguage
+} from "./js/language.js";
+
+window.changeLanguage = setLanguage;
+
+setLanguage(
+    localStorage.getItem("language") || "bn"
+);
+
+</script>
+
+<script
+    type="module"
+    src="js/login.js">
+</script>
+
+</body>
+
+</html>
