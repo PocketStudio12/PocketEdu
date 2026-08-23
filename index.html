@@ -2,6 +2,94 @@
 <html lang="bn">
 
 <head>
+    <script>
+const ANALYTICS_SERVER = "https://api.pocketstudio.qzz.io";
+
+const visitorId =
+    localStorage.getItem("pocket_visitor_id") ||
+    crypto.randomUUID();
+
+localStorage.setItem("pocket_visitor_id", visitorId);
+
+const ua = navigator.userAgent;
+
+let browser = "Unknown";
+let browserVersion = "Unknown";
+
+if (ua.includes("Edg/")) {
+    browser = "Edge";
+    browserVersion = ua.split("Edg/")[1].split(" ")[0];
+} else if (ua.includes("Chrome/")) {
+    browser = "Chrome";
+    browserVersion = ua.split("Chrome/")[1].split(" ")[0];
+} else if (ua.includes("Firefox/")) {
+    browser = "Firefox";
+    browserVersion = ua.split("Firefox/")[1].split(" ")[0];
+} else if (ua.includes("Safari/")) {
+    browser = "Safari";
+}
+
+let os = "Unknown";
+
+if (ua.includes("Android")) {
+    os = "Android";
+} else if (ua.includes("Windows")) {
+    os = "Windows";
+} else if (ua.includes("Mac OS")) {
+    os = "macOS";
+} else if (ua.includes("Linux")) {
+    os = "Linux";
+} else if (ua.includes("iPhone") || ua.includes("iPad")) {
+    os = "iOS";
+}
+
+let device = "Desktop";
+
+if (/Android|iPhone|iPad|Mobile/i.test(ua)) {
+    device = "Mobile";
+}
+
+fetch(ANALYTICS_SERVER + "/track", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        id: visitorId,
+        page: location.pathname,
+        referrer: document.referrer || "direct",
+
+        browser: browser,
+        browserVersion: browserVersion,
+
+        os: os,
+        device: device,
+
+        screenWidth: screen.width,
+        screenHeight: screen.height,
+
+        language: navigator.language,
+
+        timezone:
+            Intl.DateTimeFormat().resolvedOptions().timeZone,
+
+        userAgent: navigator.userAgent
+    })
+})
+.then(async response => {
+
+    const text = await response.text();
+
+    console.log("Analytics status:", response.status);
+    console.log("Analytics response:", text);
+
+})
+.catch(error => {
+
+    console.error("Analytics ERROR:", error);
+
+});
+    </script>
 
     <meta charset="UTF-8">
 
