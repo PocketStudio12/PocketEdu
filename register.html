@@ -33,19 +33,15 @@
             data-lang="createAccount">
             অ্যাকাউন্ট তৈরি করুন
         </p>
+<div class="language-switch">
+    <button id="bnButton" type="button">
+        বাংলা
+    </button>
 
-        <div class="language-switch">
-
-            <button onclick="changeLanguage('bn')">
-                বাংলা
-            </button>
-
-            <button onclick="changeLanguage('en')">
-                English
-            </button>
-
-        </div>
-
+    <button id="enButton" type="button">
+        English
+    </button>
+</div>
         <p data-lang="selectEmoji">
             প্রোফাইল ইমোজি নির্বাচন করুন
         </p>
@@ -161,9 +157,24 @@
 </div>
 
 <script type="module">
-    import { setLanguage, t } from "https://edu.pocketstudio.qzz.io/js/language.js";
+    import { setLanguage } from "./js/language.js";
 
-setLanguage(localStorage.getItem("language") || "bn");
+    const savedLanguage =
+        localStorage.getItem("language") || "bn";
+
+    setLanguage(savedLanguage);
+
+    document
+        .getElementById("bnButton")
+        .addEventListener("click", () => {
+            setLanguage("bn");
+        });
+
+    document
+        .getElementById("enButton")
+        .addEventListener("click", () => {
+            setLanguage("en");
+        });
 </script>
 
 <script
