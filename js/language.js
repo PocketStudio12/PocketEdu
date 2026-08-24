@@ -10,7 +10,6 @@ const translations = {
         fullName: "Full Name",
         username: "Username",
         selectEmoji: "Select Profile Emoji",
-        forgotTitle: "Forgot Password?",
         forgot: "Forgot Password?",
         noAccount: "Don't have an account?",
         haveAccount: "Already have an account?",
@@ -43,7 +42,6 @@ const translations = {
         fullName: "পূর্ণ নাম",
         username: "ইউজারনেম",
         selectEmoji: "প্রোফাইল ইমোজি নির্বাচন করুন",
-        forgotTitle: "পাসওয়ার্ড ভুলে গেছো?",
         forgot: "পাসওয়ার্ড ভুলে গেছো?",
         noAccount: "অ্যাকাউন্ট নেই?",
         haveAccount: "আগেই অ্যাকাউন্ট আছে?",
@@ -75,7 +73,6 @@ function setLanguage(lang) {
     localStorage.setItem("language", lang);
 
     document.querySelectorAll("[data-lang]").forEach(element => {
-
         const key = element.dataset.lang;
 
         if (translations[lang][key]) {
