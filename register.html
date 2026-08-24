@@ -161,17 +161,9 @@
 </div>
 
 <script type="module">
+    import { setLanguage, t } from "./language.js";
 
-import {
-    setLanguage
-} from "js/language.js";
-
-window.changeLanguage = setLanguage;
-
-setLanguage(
-    localStorage.getItem("language") || "bn"
-);
-
+setLanguage(localStorage.getItem("language") || "bn");
 </script>
 
 <script
